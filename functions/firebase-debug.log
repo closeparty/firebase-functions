@@ -1,0 +1,184 @@
+[debug] [2018-09-17T20:40:42.674Z] ----------------------------------------------------------------------
+[debug] [2018-09-17T20:40:42.676Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrador\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-09-17T20:40:42.676Z] CLI Version:   4.2.1
+[debug] [2018-09-17T20:40:42.676Z] Platform:      win32
+[debug] [2018-09-17T20:40:42.676Z] Node Version:  v8.9.4
+[debug] [2018-09-17T20:40:42.677Z] Time:          Mon Sep 17 2018 17:40:42 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-09-17T20:40:42.677Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-17T20:40:42.686Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-17T20:40:42.687Z] > authorizing via signed-in user
+[debug] [2018-09-17T20:40:42.689Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/cripple-app  
+ 
+[debug] [2018-09-17T20:40:43.540Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'cripple-app'...
+[info] 
+[info] i  deploying database, storage, functions
+[info] i  database: checking rules syntax...
+[debug] [2018-09-17T20:40:44.142Z] >>> HTTP REQUEST PUT https://cripple-app.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2018-09-17T20:40:44.823Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database cripple-app is valid
+[debug] [2018-09-17T20:40:44.824Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/cripple-app  
+ 
+[debug] [2018-09-17T20:40:45.987Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-09-17T20:40:45.988Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/cripple-app:test  
+
+[debug] [2018-09-17T20:40:47.060Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[debug] [2018-09-17T20:40:47.063Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.0.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-09-17T20:40:47.063Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/cripple-app?view=CONSUMER_VIEW  
+ 
+[debug] [2018-09-17T20:40:47.064Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/cripple-app?view=CONSUMER_VIEW  
+ 
+[debug] [2018-09-17T20:40:48.450Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-09-17T20:40:48.641Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:40:48.641Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/cripple-app  
+ 
+[debug] [2018-09-17T20:40:49.663Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:40:49.664Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/569886850470:getServerAppConfig  
+ 
+[debug] [2018-09-17T20:40:49.957Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-09-17T20:40:49.958Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/cripple-app/rulesets  
+
+[debug] [2018-09-17T20:40:51.185Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:40:51.186Z] [rules] created ruleset projects/cripple-app/rulesets/a5e885d8-1300-428f-a0fe-f63b9299e687
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-09-17T20:40:51.189Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/cripple-app/configs  
+ 
+[debug] [2018-09-17T20:40:51.521Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (40.66 KB) for uploading
+[debug] [2018-09-17T20:40:51.855Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/cripple-app/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2018-09-17T20:40:53.178Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:40:53.178Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-7b1fe48c-3969-4afc-b5e3-b4f3dd8a0dfd/c7d784f8-233c-4d11-a934-1d18ddef6d84.zip?GoogleAccessId=service-569886850470@gcf-admin-robot.iam.gserviceaccount.com&Expires=1537218538&Signature=jsMsRMpbkLWOdiZcQ0jQ6UBPYjhlzaLmJ1GkPDa%2Bavz7hQIBgf5v8pe5ocyI9RJfFJffzwYF5TPHk6mdNLxNbghitiCkekPw1kK105T1OQGwanuhXpjBePS6SBAdZqfZaZpqCuEwgIz9vLrhZfNEmRUHHFopSHghgqQ0fsROcWTXenjuXXshQjrhQVhTV04SJ64dfKCyknLnh0cTBsL7OwUXXaEi1QxR9NQOXUblpMPko9mcGCEJuOaWRJm%2Fyov56hy0sGXDqx1fCDAOW6LFjIfr1cIXuaXT3NdoqjcENJKSQMRju0bHdmDVonN8aNdFbbcvkF4ZVpE8hcjOQg2uhA%3D%3D  
+
+[debug] [2018-09-17T20:40:53.828Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[info] i  database: releasing rules...
+[debug] [2018-09-17T20:40:53.830Z] >>> HTTP REQUEST PUT https://cripple-app.firebaseio.com/.settings/rules.json  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2018-09-17T20:40:54.404Z] <<< HTTP RESPONSE 200
+[info] +  database: rules for database cripple-app released successfully
+[debug] [2018-09-17T20:40:54.405Z] [rules] releasing firebase.storage/cripple-app.appspot.com with ruleset projects/cripple-app/rulesets/a5e885d8-1300-428f-a0fe-f63b9299e687
+[debug] [2018-09-17T20:40:54.406Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/cripple-app/releases/firebase.storage/cripple-app.appspot.com  
+
+[debug] [2018-09-17T20:40:55.649Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:40:55.649Z] [rules] updated release projects/cripple-app/releases/firebase.storage/cripple-app.appspot.com
+[info] +  storage: released rules storage.rules to firebase.storage/cripple-app.appspot.com
+[debug] [2018-09-17T20:40:55.651Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/cripple-app/locations/-/functions  
+ 
+[debug] [2018-09-17T20:40:57.085Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 6 function onCreateUser(us-central1)...
+[debug] [2018-09-17T20:40:57.087Z] Trigger is:  {"eventTrigger":{"resource":"projects/cripple-app","eventType":"providers/firebase.auth/eventTypes/user.create","service":"firebaseauth.googleapis.com"}}
+[info] i  functions: updating Node.js 6 function onDeleteUser(us-central1)...
+[debug] [2018-09-17T20:40:57.088Z] Trigger is:  {"eventTrigger":{"resource":"projects/cripple-app","eventType":"providers/firebase.auth/eventTypes/user.delete","service":"firebaseauth.googleapis.com"}}
+[debug] [2018-09-17T20:40:57.089Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/cripple-app/locations/us-central1/functions/onCreateUser 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+
+[debug] [2018-09-17T20:40:57.091Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/cripple-app/locations/us-central1/functions/onDeleteUser 
+query params: {"updateMask":"sourceUploadUrl,name,labels,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+
+[debug] [2018-09-17T20:40:57.540Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:40:58.336Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:40:58.337Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25DcmVhdGVVc2VyLzJpLS1MZk1oc20w  
+ 
+[debug] [2018-09-17T20:40:58.338Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:40:59.466Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:40:59.474Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:01.468Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:01.475Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25DcmVhdGVVc2VyLzJpLS1MZk1oc20w  
+ 
+[debug] [2018-09-17T20:41:01.762Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:02.621Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:03.765Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25DcmVhdGVVc2VyLzJpLS1MZk1oc20w  
+ 
+[debug] [2018-09-17T20:41:04.061Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:04.623Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:05.736Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:06.062Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25DcmVhdGVVc2VyLzJpLS1MZk1oc20w  
+ 
+[debug] [2018-09-17T20:41:07.204Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:07.738Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:08.013Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:09.206Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25DcmVhdGVVc2VyLzJpLS1MZk1oc20w  
+ 
+[debug] [2018-09-17T20:41:10.014Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:10.291Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:10.345Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:12.292Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:12.347Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25DcmVhdGVVc2VyLzJpLS1MZk1oc20w  
+ 
+[debug] [2018-09-17T20:41:12.579Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:13.482Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:14.579Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:14.853Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:15.482Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25DcmVhdGVVc2VyLzJpLS1MZk1oc20w  
+ 
+[debug] [2018-09-17T20:41:15.763Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:16.853Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:17.122Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:17.765Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25DcmVhdGVVc2VyLzJpLS1MZk1oc20w  
+ 
+[debug] [2018-09-17T20:41:18.039Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:19.122Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:19.407Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:20.040Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25DcmVhdGVVc2VyLzJpLS1MZk1oc20w  
+ 
+[debug] [2018-09-17T20:41:21.238Z] <<< HTTP RESPONSE 200
+[info] +  functions[onCreateUser(us-central1)]: Successful update operation. 
+[debug] [2018-09-17T20:41:21.409Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:22.550Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:24.551Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:24.820Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:26.822Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:27.088Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:29.088Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
+[debug] [2018-09-17T20:41:29.357Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T20:41:31.358Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y3JpcHBsZS1hcHAvdXMtY2VudHJhbDEvb25EZWxldGVVc2VyL2w1aDNwNW5BTnRN  
+ 
